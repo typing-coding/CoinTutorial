@@ -4,6 +4,8 @@ import constants from 'jest-haste-map/build/constants'
 
 import { getStatusBarHeight } from 'react-native-status-bar-height'
 
+import TopBar from './components/TopBar'
+
 import CoinView from './screens/CoinView'
 
 export default class App extends Component {
@@ -12,6 +14,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" translucent={true} backgroundColor={'transparent'} />
         <View style={styles.statusBar} />
+        <TopBar title="App Title" />
         <CoinView />
       </View>
     )
