@@ -7,7 +7,7 @@ import { Image, Text, StyleSheet, View } from 'react-native'
 export default class CoinItem extends Component {
     render() {
         return (
-            <View style={styles.container}>
+            <View style={styles.container} key={this.props.id}>
                 <Image
                  style={styles.image}
                  source={{uri: "https://bitcoin.org/img/icons/opengraph.png"}} />

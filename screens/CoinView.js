@@ -175,10 +175,36 @@ const data = [{
 }];
 
 export default class CoinView extends Component {
+    constructor(props){
+        super(props);
+        
+        this.state = {
+            isLoading: true,
+            data: []
+        }
+    }
+    getData = (limit)=>{
+        const url = `https://gist.githubusercontent.com/JeffGuKang/2ccbe7ee81c88d836fa39fc019b374a9/raw/998876fa052f48422390fd02709c9ec75e97833f/gistfile1.txt`
+        this.setState({
+            isLoading: false
+        });
+        fetch(url)
+        .then(response=>response.json())
+        .then(responseJson=>{
+            this.setState({
+                isLoading: true,
+                data: responseJson
+            })
+        })
+        .catch(error=>console.error(error))
+    }
+    componentDidMount(){
+        this.getData(10);
+    }
     render() {
         return (
             <View style={[styles.container, this.props.style]}>
-                {data.map(item=><CoinItem {...item} />)}
+                {this.state.data.map(item=><CoinItem {...item} />)}
             </View>
         )
     }
