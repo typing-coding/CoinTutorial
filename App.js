@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, StatusBar } from 'react-native'
+import constants from 'jest-haste-map/build/constants'
+
+import { getStatusBarHeight } from 'react-native-status-bar-height'
+
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> textInComponent </Text>
+        <StatusBar barStyle="dark-content" translucent={true} backgroundColor={'transparent'} />
+        <View style={styles.statusBar} />
       </View>
     )
   }
@@ -15,8 +20,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center'
+  },
+  statusBar: {
+    backgroundColor: 'pink',
+    height: getStatusBarHeight(),
+    width: '100%'
   }
 })
