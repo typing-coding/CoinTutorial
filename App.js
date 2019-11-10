@@ -9,13 +9,22 @@ import TopBar from './components/TopBar'
 import CoinView from './screens/CoinView'
 
 export default class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      refreshDate: '-'
+    }
+  }
+  setRefreshDate = refreshDate => {
+    this.setState({refreshDate: refreshDate})
+  }
   render() {
     return (
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" translucent={true} backgroundColor={'transparent'} />
         <View style={styles.statusBar} />
-        <TopBar title="App Title" />
-        <CoinView style={styles.coinView} />
+        <TopBar title="App Title" refreshDate={this.state.refreshDate} />
+        <CoinView style={styles.coinView} setRefreshDate={this.setRefreshDate} />
       </View>
     )
   }

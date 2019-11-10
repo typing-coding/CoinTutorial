@@ -6,7 +6,10 @@ export default class TopBar extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.button}>Left</Text>
+                <View style={styles.titleBox}>
                 <Text style={styles.title}>{this.props.title || 'TITLE'}</Text>
+                <Text style={styles.date}>{this.props.refreshDate || '-'}</Text>
+                </View>
                 <Text style={styles.button}>Right</Text>
             </View>
         )
@@ -26,8 +29,15 @@ const styles = StyleSheet.create({
         padding: 10,
         backgroundColor: 'skyblue'
     },
+    titleBox: {
+        alignItems: 'center'
+    },
     title: {
         fontSize: 24,
         color: '#323232'
+    },
+    date: {
+        fontSize: 16,
+        color: '#999'
     }
 })

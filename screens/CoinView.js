@@ -198,8 +198,17 @@ export default class CoinView extends Component {
         })
         .catch(error=>console.error(error))
     }
+    getDate = ()=>{
+        const date = new Date();
+        const now = date.toLocaleString();
+
+        this.props.setRefreshDate(now);
+    }
     componentDidMount(){
-        this.getData(10);
+        setInterval(()=>{
+            this.getDate();
+            this.getData(10);
+        },1000)
     }
     render() {
         return (
