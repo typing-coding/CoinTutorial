@@ -15,7 +15,7 @@ export default class App extends Component {
         <StatusBar barStyle="dark-content" translucent={true} backgroundColor={'transparent'} />
         <View style={styles.statusBar} />
         <TopBar title="App Title" />
-        <CoinView />
+        <CoinView style={styles.coinView} />
       </View>
     )
   }
@@ -30,5 +30,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink',
     height: getStatusBarHeight(),
     width: '100%'
+  },
+  coinView: {
+    flex: 1,
+    backgroundColor: '#fff',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center'
   }
-})
+});
