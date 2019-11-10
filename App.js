@@ -4,6 +4,7 @@ import constants from 'jest-haste-map/build/constants'
 
 import { getStatusBarHeight } from 'react-native-status-bar-height'
 
+import CoinView from './screens/CoinView'
 
 export default class App extends Component {
   render() {
@@ -11,6 +12,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" translucent={true} backgroundColor={'transparent'} />
         <View style={styles.statusBar} />
+        <CoinView />
       </View>
     )
   }
