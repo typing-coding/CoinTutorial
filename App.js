@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'center'
+    // justifyContent: 'flex-start',
+    // alignItems: 'center'
   }
 });

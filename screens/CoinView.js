@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, ScrollView } from 'react-native'
 
 import CoinItem from '../components/CoinItem'
 
@@ -212,15 +212,17 @@ export default class CoinView extends Component {
     }
     render() {
         return (
-            <View style={[styles.container, this.props.style]}>
+            <ScrollView style={[styles.container, this.props.style]}>
                 {this.state.data.map(item=><CoinItem {...item} />)}
-            </View>
+            </ScrollView>
         )
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'skyblue'
+        width: '100%',
+        backgroundColor: 'skyblue',
+        flex: 1
     }
 })
