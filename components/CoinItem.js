@@ -10,7 +10,7 @@ export default class CoinItem extends Component {
             <View style={styles.container} key={this.props.id}>
                 <Image
                  style={styles.image}
-                 source={{uri: "https://bitcoin.org/img/icons/opengraph.png"}} />
+                 source={{uri: this.props.iconUri}} />
                  <View style={styles.textContent}>
                      <Text style={styles.title}>{this.props.name || 'Name'}</Text>
                      <Text style={styles.subText}>volume : { this.props["24h_volume_usd"] || 0} </Text>

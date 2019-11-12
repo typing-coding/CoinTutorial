@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View, ScrollView } from 'react-native'
 
+import { getCoinIconUri } from '../libs/Constants'
+
 import CoinItem from '../components/CoinItem'
 
 const data = [{
@@ -174,6 +176,7 @@ const data = [{
     "last_updated": "1573401964"
 }];
 
+
 export default class CoinView extends Component {
     constructor(props){
         super(props);
@@ -213,7 +216,7 @@ export default class CoinView extends Component {
     render() {
         return (
             <ScrollView style={[styles.container, this.props.style]}>
-                {this.state.data.map(item=><CoinItem {...item} />)}
+                {this.state.data.map(item=><CoinItem {...item} iconUri={getCoinIconUri(item.name)}/>)}
             </ScrollView>
         )
     }
